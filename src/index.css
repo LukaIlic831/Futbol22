@@ -1,13 +1,695 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #010b13;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.futbol22-color {
+  color: #0096a9 !important;
+  border-color: #0096a9 !important;
+}
+
+.futbol22-backgroundColor {
+  background-color: #0096a9 !important;
+}
+
+/* Header */
+
+header {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #0096a9;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.header__logo--text {
+  color: #f2b705;
+}
+
+.header__logo span {
+  color: #0096a9;
+  margin-left: 0.2vw;
+}
+
+/* Games */
+
+.games__para {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.games__wrapper {
+  grid-gap: 50px;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 0 16px;
+}
+
+.game {
+  height: 250px;
+  overflow: hidden;
+  border: 2px solid #0096a9;
+  border-radius: 20px;
+  position: relative;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.game__image {
+  object-fit: cover;
+  height: 100%;
+}
+
+.game__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  transition: all 300ms ease;
+}
+
+.game:hover .game__overlay {
+  opacity: 0.4;
+}
+
+.game__text {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10%;
+  background-color: #000;
+  width: 100%;
+  border-bottom: 2px solid #f2b705;
+  border-top: 2px solid #f2b705;
+  font-size: 20px;
+  color: white;
+}
+
+.game__header--logo {
+  cursor: pointer;
+}
+
+/* World cup game */
+
+.game__header {
+  border-color: #aa0052;
+  position: relative;
+}
+
+.game__header span {
+  color: #aa0052;
+}
+
+.game__header--icons {
+  display: flex;
+  position: absolute;
+  left: 6px;
+}
+
+.game__header--icon {
+  margin: 0 14px;
+  font-size: 1.5rem;
+  color: #aa0052 !important;
+  cursor: pointer;
+}
+
+/* Formation */
+
+.formation__wrapper {
+  width: 950px;
+  max-width: 90%;
+  margin: 20px auto;
+  border: 2px solid #aa0052;
+  color: #aa0052;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.position {
+  margin: 4px 0;
+}
+
+.strikers,
+.central__midfielders,
+.central__defenders,
+.central__defensive--midfielders {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.player__card--box {
+  width: 180px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.player__card--box-front,
+.player__card--box-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #aa0052;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.player__card--box-back {
+  height: 100%;
+}
+
+.player__card--box-back {
+  background-color: #aa0052;
+  color: #000 !important;
+}
+
+.player__card--box-flag {
+  width: 30px;
+  padding: 4px 0;
+}
+
+.side__midfielders,
+.fullbacks {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
+}
+
+.goalkeeper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Search Input */
+
+.blocks__wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  flex-direction: column;
+}
+
+.country {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.country img {
+  height: 20px;
+  max-width: 30px;
+  margin-right: 5px;
+}
+.search__input--wrapper {
+  display: flex;
+  margin: 15px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.search__input input {
+  width: 100%;
+  max-width: 94%;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 2px solid #f2b705;
+  border-radius: 10px;
+  background-color: #130109;
+  color: #fff;
+  margin: 0 5px;
+  outline: none;
+}
+
+.search__button span {
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 2px solid #f2b705;
+  border-radius: 10px;
+  background-color: #f2b705;
+  color: #0e0007;
+  cursor: pointer;
+  margin: 0 5px;
+  outline: none;
+}
+
+.search__flag {
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 15px;
+  margin-top: 24px;
+  border-radius: 10px;
+  border: 2px solid #f2b705;
+  margin: 0 5px;
+  transition: all 300ms ease;
+}
+
+.search__flag:hover {
+  background-color: #f2b7051f;
+}
+
+.search__input--text,
+.gived-up__text,
+.finished__text {
+  color: white;
+  text-align: center;
+}
+
+/* Game Rules */
+
+.game__rules--wrapper,
+.game__won--wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  color: #333;
+}
+
+.game__rules--block,
+.game__won--block {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.game__rules--block-content,
+.game__won--block-content {
+  padding: 20px;
+  position: relative;
+}
+
+.game__rules--block-sub-title,
+.game__won--block-sub-title {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.game__rules--block-sub-title span,
+.game__won--block-sub-title span {
+  font-weight: bold;
+}
+
+.game__rules--block-instructions {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  position: relative;
+}
+
+.swiper-slide__para {
+  font-size: 14px;
+  text-align: left;
+  margin: 8px 0 50px 0;
+  background-color: #ddd;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
+.game__rules--block-button {
+  padding-top: 20px;
+}
+
+.game__rules--block-button span {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 2px solid #f2b705;
+  border-radius: 10px;
+  background-color: #f2b705;
+  color: #0e0007;
+  cursor: pointer;
+  margin: 0 5px;
+  outline: none;
+}
+
+/* Deafault swiper arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  bottom: 0 !important;
+  top: auto !important;
+  z-index: 11 !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px !important;
+  font-weight: bold;
+  background-color: #333;
+  border-radius: 50%;
+  padding: 12px 15px;
+  color: white;
+  z-index: 11 !important;
+}
+
+.x-mark {
+  position: absolute;
+  right: 20px;
+  background-color: #aa0052;
+  right: 10px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+/* Game Won */
+
+.game__won--block-games {
+  grid-template-columns: repeat(2, 1fr) !important;
+  grid-gap: 20px;
+}
+
+
+
+/* Guess The Footballer */
+
+.guess-footballer__wrapper {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  margin-top: 40px;
+  color: white !important;
+}
+
+.guess-footballer__block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.guess-footballer__input--wrapper {
+  display: flex;
+  margin: 15px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.guess-footballer--img img {
+  width: 90px;
+  height: 90px;
+  border: 2px solid #0096a9;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0096a9;
+}
+
+.guess-footballer__questions {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.guess-footballer__select{
+  display: flex;
+}
+
+.guess-footballer__select select {
+  width: 100%;
+  border: 2px solid #0096a9;
+  border-radius: 10px;
+  background-color: #010b13;
+  color: white;
+  padding: 5px;
+  min-width: 240px;
+  outline: none;
+}
+
+.guess-footballer__input {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #0096a9;
+  border-radius: 10px;
+  outline: none;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.guess-footballer__button span {
+  padding: 5px 10px;
+  font-family: inherit;
+  border: 2px solid #f2b705;
+  border-radius: 10px;
+  background-color: #010b13;
+  color: white;
+  cursor: pointer;
+}
+
+.guess-footballer__button span:hover {
+  background-color: #f2b705;
+  color: #010b13;
+}
+
+.guess-footballer__questions--left {
+  padding-bottom: 14px;
+}
+
+.guess-footballer__questions--left h2 {
+  font-size: 18px;
+}
+
+.guess-footballer__attempts {
+  display: flex;
+  position: absolute;
+  right: 28%;
+  top: 0;
+}
+
+.guess-footballer__attempt {
+  width: 25px;
+  height: 25px;
+}
+
+.guess-footballer__questions--wrapper {
+  border: 2px solid #f2b705;
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  border-radius: 15px;
+  min-height: 300px;
+}
+
+.guess-footballer__question {
+  background-color: #010b13;
+  color: white;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-footballer__question:nth-child(even){
+  background-color:#031825;
+}
+
+.wrong-answer,
+.right-answer {
+  margin-left: 10px;
+  padding: 0 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.wrong-answer {
+  background-color: red;
+}
+
+.right-answer{
+  background-color: rgb(20, 181, 11);
+}
+
+.guess-footballer__answer{
+  color: white;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+
+.search__input--text-para, .guess-footballer__answer{
+  padding: 0 20px;
+}
+
+
+@media (max-width:768px) {
+  .games__wrapper{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .guess-footballer__questions--wrapper{
+    max-width: 90%;
+  }
+
+  .guess-footballer__attempts{
+    right: 6%;
+  }
+
+  .guess-footballer__questions{
+    max-width: 90%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .guess-footballer__questions--left h2{
+    font-size: 16px;
+  }
+
+  .game{
+    height: 300px;
+  }
+
+  .player__card--box{
+    height: 20px;
+    width: 130px;
+    max-width:30vw;
+    margin: 15px 0;
+  }
+
+  .player__card--box-back{
+    flex-direction: row;
+    font-size: 14px;
+    height: unset;
+    justify-content: space-around;
+  }
+
+  .player__card--box-back p,   .player__card--box-back img{
+    width: 50%;
+  }
+  
+}
+
+@media (max-width:478px) {
+  .player__card--box{
+    width: 110px;
+  }
+
+  .guess-footballer__select{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guess-footballer__select select{
+    min-width: 90%;
+    margin-top: 40px;
+  }
+
+  .guess-footballer__input{
+    margin-top: 20px;
+    max-width: 90%;
+  }
+
+  .guess-footballer__button{
+    margin-top: 20px;
+  }
+
+  .side__midfielders, .fullbacks{
+    margin: 0 20px;
+  }
+
+  .game__rules--block, .game__won--block{
+    max-width: 90%;
+  }
+
+  .game__won--block-games {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .game__won--block-games .game{
+    height: 200px;
+  }
+  
+  .guess-footballer__questions--left{
+    margin-top: 50px;
+  }
 }
